@@ -3,6 +3,8 @@
 
 - 🔭 I’m currently working on **Data Visualization and Analytics for Sports (NFL/NBA)**
 
+- 👯 Member of [Coordinated Systems Lab](http://coordinatedsystemslab.com/) @ ISU
+
 - 🌱 I’m currently learning **Python for Data Science & AI/ML**
 
 - 📫 How to reach me **beckergavinj@gmail.com**

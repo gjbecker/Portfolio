@@ -11,3 +11,7 @@ E2E and unit tests with Jest and Puppeteer.
 Implemented Instruments:
 - Piano
 - Bongo
+
+Key Features:
+- User signup/login
+- Key mapping

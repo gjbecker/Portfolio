@@ -21,3 +21,12 @@
 # Portfolio
 
 Collection of personal projects, class projects, and certificates.
+
+Mechanical Engineer turned Computer Scientist. Internship experience in manufacturing led to:
+- interest in Automation and Data Analytics (IIoT)
+- learning Python
+- studying Cyber-Physical Systems
+- pursuing Computer Science
+- studying AI/ML
+
+Graduate research focused on applying Machine Learning techniques to control systems.

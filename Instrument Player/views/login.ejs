@@ -1,0 +1,133 @@
+<html>
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-10" style="background-color: black">
+          <%- include("./partials/nav_simple.ejs") %>
+
+          <% if (errors.length > 0) { %>
+            <div class="text-white" id="error"style="background-color: darkred; border-radius: 25px; padding: 20px;">
+              <% errors.forEach(error => { %>
+                <h6 class="card-text"> ~ <%= error %></h6>
+            <%	}) %>
+            </div>
+            <% }%>
+
+          <h1 class="text-white">Login</h1>
+
+          <form class="text-white" id="login" method="POST" action="/signin">
+            <div class="row mb-3">
+              <label for="inputUsername" class="col-sm-2 col-form-label"
+                ><b>Username</b></label
+              >
+              <div class="col-4">
+                <input
+                  type="username"
+                  class="form-control"
+                  id="inputUsername"
+                  name="username"
+                  value="<%= reqLogin.username %>"
+                />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="inputPassword3" class="col-sm-2 col-form-label"
+                ><b>Password</b></label
+              >
+              <div class="col-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword3"
+                  name="password"
+                  value="<%= reqLogin.password %>"
+                />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="none" class="col-sm-2 col-form-label"></label>
+              <div class="col-4">
+                <button type="submit" class="btn btn-dark" id="login-btn">Login</button>
+              </div>
+            </div>
+          </form>
+
+          <h1 class="text-white">Sign Up</h1>
+          <form class="text-white" id="signup" method="POST" action="/signup">
+            <div class="row mb-3">
+              <label for="inputName1" class="col-sm-2 col-form-label"
+                ><b>First Name</b></label
+              >
+              <div class="col-4">
+                <input type="name1" class="form-control" id="fname" name="fname" value="<%= reqSignup.fname %>"/>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="inputName2" class="col-sm-2 col-form-label"
+                ><b>Last Name</b></label
+              >
+              <div class="col-4">
+                <input type="name2" class="form-control" id="lname" name="lname" value="<%= reqSignup.lname %>"/>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                ><b>Email</b></label
+              >
+              <div class="col-4">
+                <input type="email" class="form-control" id="email" name="email" value="<%= reqSignup.email %>"/>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="setUsername" class="col-sm-2 col-form-label"
+                ><b>Username</b></label
+              >
+              <div class="col-4">
+                <input type="username" class="form-control" id="newUsername" name="newUsername" value="<%= reqSignup.newUsername %>"/>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="setPassword3" class="col-sm-2 col-form-label"
+                ><b>Password</b></label
+              >
+              <div class="col-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="newPassword"
+                  aria-describedby="passwordHelpBlock"
+                  name="newPassword"
+                  value="<%= reqSignup.newPassword %>"
+                />
+                <div id="passwordHelpBlock" class="form-text text-white">
+                  Your password must be 8-20 characters long
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="none" class="col-sm-2 col-form-label"></label>
+              <div class="col-4">
+                <button type="submit" class="btn btn-dark" id="signup-btn">Sign up</button>
+              </div>
+            </div>
+          </form>
+
+          <%- include("./partials/footer.ejs") %>
+        </div>
+
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <script src=""></script>
+  </body>
+</html>

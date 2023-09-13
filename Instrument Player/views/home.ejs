@@ -1,0 +1,45 @@
+<html>
+  <%- include("./partials/head.ejs") %>
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+          <div class="col-1" ></div>
+          
+          <div class="col-10" style="background-color:black;">
+            
+            <%- include("./partials/nav_home.ejs") %>
+            
+            <form id="home">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <% if (items.length > 0) { %>
+                  <% var total = 0 %>
+                  <% var qty = 0 %>
+                  <% items.forEach(item => { %>
+                  <div class="col">
+                    <div class="card h-100" id="<%= item.name %>" >
+                      <a href="/<%= item.name %>"><img src="<%= item.img %>" class="card-img-top" alt="<%= item.name %>"></a>
+                      <div class="card-body">
+                        
+                        <h5 class="card-title" id="<%= item.name %>-title"> <%= item.name.charAt(0).toUpperCase() + item.name.slice(1) %></h5>
+                        <p class="card-text"><%= item.desc %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <%	}) %>
+                    <% }%>
+                </div>
+            </form>  
+
+            
+            <%- include("./partials/footer.ejs") %>
+          </div>
+
+          <div class="col-1"></div>
+      </div>
+    </div>
+    <script src="/home_script.js"></script>
+
+  </body>
+</html>

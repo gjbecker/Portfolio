@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <title> Instrument Player | <%= title%></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="piano_style.css">
+    </head>
+    <body>
+        <div class="containter">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8" style="background-color:black;">
+                    
+                    <%- include("../partials/nav_instruments.ejs") %>
+
+                    <div class="piano">
+                        <div data-note="C" class="key white"><kbd class="key-code white" id="ckey"></kbd></div>
+                        <div data-note="Db" class="key black"><kbd class="key-code black"></kbd></div>
+                        <div data-note="D" class="key white"><kbd class="key-code white"></kbd></div>
+                        <div data-note="Eb" class="key black"><kbd class="key-code black"></kbd></div>
+                        <div data-note="E" class="key white"><kbd class="key-code white"></kbd></div>
+                        <div data-note="F" class="key white"><kbd class="key-code white"></kbd></div>
+                        <div data-note="Gb" class="key black"><kbd class="key-code black"></kbd></div>
+                        <div data-note="G" class="key white"><kbd class="key-code white"></kbd></div>
+                        <div data-note="Ab" class="key black"><kbd class="key-code black"></kbd></div>
+                        <div data-note="A" class="key white"><kbd class="key-code white"></kbd></div>
+                        <div data-note="Bb" class="key black"><kbd class="key-code black"></kbd></div>
+                        <div data-note="B" class="key white"><kbd class="key-code white"></kbd></div>
+                    </div>
+                    <div class="container" style="position: relative; text-align: center; width: 100%;">
+                        <div id="popup" style="display: none; position: fixed; left: 50%; top: 5%; transform: translate(-50%, 5%); border:3px solid grey; z-index: 9; background-color: #FFF;">
+                            <form style="max-width: 300px; padding: 20px; background-color: #FFF;" id="map">
+                                <h2 id="maptitle">Map Keys</h2>
+                                <div id="liveAlertPlaceholder"></div>
+                                <label for="white">
+                                    Type keys for white seperated by commas
+                                </label>
+                                <input type="text" id="white" placeholder="a,s,d,f,j,k,l" name="white" maxlength="13" minlength="13" required>
+                                <label for="black">
+                                    Type keys for black seperated by commas
+                                </label>
+                                <input type="text" id="black" placeholder="w,e,u,i,o" name="black" maxlength="9" minlength="9" required>
+                                <button type="submit" class="btn btn-success" id="mapsubmit">Map Keys</button>
+                                <button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                    <audio id="C" src="/keyboard_notes/C.mp3"></audio>
+                    <audio id="Db" src="/keyboard_notes/Db.mp3"></audio>
+                    <audio id="D" src="/keyboard_notes/D.mp3"></audio>
+                    <audio id="Eb" src="/keyboard_notes/Eb.mp3"></audio>
+                    <audio id="E" src="/keyboard_notes/E.mp3"></audio>
+                    <audio id="F" src="/keyboard_notes/F.mp3"></audio>
+                    <audio id="Gb" src="/keyboard_notes/Gb.mp3"></audio>
+                    <audio id="G" src="/keyboard_notes/G.mp3"></audio>
+                    <audio id="Ab" src="/keyboard_notes/Ab.mp3"></audio>
+                    <audio id="A" src="/keyboard_notes/A.mp3"></audio>
+                    <audio id="Bb" src="/keyboard_notes/Bb.mp3"></audio>
+                    <audio id="B" src="/keyboard_notes/B.mp3"></audio>
+                    <%- include("../partials/footer.ejs") %>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <script src="/keyboardscript.js"></script>
+    </body>
+    
+</html>

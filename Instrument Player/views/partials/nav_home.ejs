@@ -1,0 +1,17 @@
+<nav class="navbar text-white" style="background-color: #CA4747">
+    <div class="container-fluid">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="text" id="search_bar">
+            <button class="btn btn-outline-light" id="search">Search</button>       
+            <button class="btn btn-outline-light" id="clear">Clear</button>                         
+        </form>
+        
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight"><h3>Instrument Player</h3></div>
+            <div class="p-2 bd-highlight">
+                <a class="nav-item nav-link" href="/login" style="color:white" id="user"><%= currentUser.username %></a>
+                <a class="nav-item nav-link" href="/logout" style="color:white"><%= currentUser.logout %></a>
+            </div>
+        </div>
+    </div>
+</nav>
